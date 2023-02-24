@@ -2,23 +2,23 @@ package entities;
 
 public class Currency {
 
-	private String name;
+	private String symbol;
 	private Double value;
 
 	public Currency() {
 	}
 
 	public Currency(String name, Double value) {
-		this.name = name;
+		this.symbol = name;
 		this.value = value;
 	}
 
 	public String getName() {
-		return name;
+		return symbol;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.symbol = name;
 	}
 
 	public Double getValue() {
@@ -35,18 +35,23 @@ public class Currency {
 		switch (obj.toString()) {
 		case "De Reais a Dólares":
 			value = quantity / 5.17;
+			symbol = "US$";
 			break;
 		case "De Reais a Euros":
 			value = quantity / 5.52;
+			symbol = "€";
 			break;
 		case "De Reias a Libras":
 			value = quantity / 6.24;
+			symbol = "£";
 			break;
 		case "De Reais a Yenes":
 			value = quantity / 0.038;
+			symbol = "¥";
 			break;
 		case "De Reais a Won Coreano":
 			value = quantity / 0.0040;
+			symbol = "₩";
 			break;
 		case "De Dólares a Reais":
 			value = quantity * 5.17;
@@ -70,6 +75,14 @@ public class Currency {
 
 	@Override
 	public String toString() {
-		return  "O valor da conversão é de R$ " + String.format("%.2f", value); 
+		String str; 
+		
+		if (symbol != null) {
+			str =  "O valor da conversão é de " + symbol + " ";
+		}
+		else {
+			str = "O valor da conversão é de R$ ";
+		}	
+		return str + String.format("%.2f", value); 
 	}
 }
