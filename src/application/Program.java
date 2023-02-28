@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.swing.JOptionPane;
 
 import entities.Currency;
+import entities.Temperature;
 
 public class Program {
 
@@ -14,8 +15,7 @@ public class Program {
 
 		int wantContinue = 2;
 		Object[] items = { "Conversor de Moeda", "Conversor de temperatura" };
-		Object selectedValue;
-		Currency crr  = new Currency();
+		Object selectedValue;	
 
 		do {
 			selectedValue = JOptionPane.showInputDialog(null, "Escolha uma Opção", "Menu",
@@ -23,6 +23,7 @@ public class Program {
 
 			if (selectedValue == "Conversor de Moeda") {
 				String strValue = JOptionPane.showInputDialog("Insira um valor:");
+				Currency crr  = new Currency();
 
 				while (!strValue.matches("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$") || strValue.isBlank()
 						|| strValue == null) {
@@ -46,6 +47,30 @@ public class Program {
 
 			} 
 			else if (selectedValue == "Conversor de temperatura") {
+				
+				String strValue = JOptionPane.showInputDialog("Insira um valor:");
+
+				while (!strValue.matches("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$") || strValue.isBlank()
+						|| strValue == null) {
+
+					JOptionPane.showMessageDialog(null, "Informe apenas numeros");
+					strValue = JOptionPane.showInputDialog("Insira um valor:");
+				}
+				Temperature tp = new Temperature();
+
+				double inputValue = Double.parseDouble(strValue);
+
+				Object temperature = JOptionPane.showInputDialog(null,
+						"Escolha uma escala para conversão de remperatura", "Temperatura",
+						JOptionPane.WARNING_MESSAGE, null, tp.getOption(), tp.getOption());
+
+				if (temperature != null) {
+					tp.converter(temperature, inputValue);
+					JOptionPane.showMessageDialog(null, tp.toString());
+				}
+
+				wantContinue = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
+		
 
 			}
 		} while (wantContinue == 0 && selectedValue != null);
