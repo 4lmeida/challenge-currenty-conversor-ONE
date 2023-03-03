@@ -1,40 +1,14 @@
 package entities;
 
-public class Temperature {
-	
-	private String symbol;
-	private Double value;
+public class Temperature extends Convert{
 	
 	private Object[] option = {"De celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahreneit a Celsius", 
 			"De Kelvin a Celsius", "De Kelvin a Fahrenheit", "De Fahrenheit a Kelvin"};
 	
 	public Temperature() {
+		super();
 	}
 
-	public Temperature(String symbol, Double value) {
-		this.symbol = symbol;
-		this.value = value;
-	}
-	
-
-	public String getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
-	}
-
-	public Double getValue() {
-		return value;
-	}
-
-	public void setValue(Double value) {
-		this.value = value;
-	}
-	
-	
-	
 	public Object[] getOption() {
 		return option;
 	}
@@ -43,52 +17,54 @@ public class Temperature {
 		this.option = option;
 	}
 
-	public double converter(Object obj, double value) {
+	@Override
+	public double convertTypes(Object obj, double value) {
 		
 		switch(obj.toString()) {
-		case "De celsius a Fahrenheit":
-			this.value = (value * 9/5) + 32;
-			symbol = "°F ";
+		case "De Celsius a Fahrenheit":
+			setValue((value * 9/5) + 32); 
+			setSymbol("°F ");
 			break;
 		case "De Celsius a Kelvin":
-			this.value  = value + 273.15;
-			symbol = "K ";
+			setValue(value + 273.15); 
+			setSymbol("K ");
 			break;
 		case "De Fahreneit a Celsius":
-			this.value = (value - 32) * 5/9;
-			symbol = "°C ";
+			setValue((value - 32) * 5/9); 
+			setSymbol("°C ");
 			break;
 		case "De Fahrenheit a Kelvin":
-			this.value = (value - 32) * 5/9  + 273.15;
-			symbol = "K ";
+			setValue((value - 32) * 5/9  + 273.15); 
+			setSymbol("K ");
 			break;
 		case "De Kelvin a Celsius":
-			this.value = (value - 273.15);
-			symbol = "°C ";
+			setValue(value - 273.15); 
+			setSymbol("°C ");
 			break;
 		case "De Kelvin a Fahrenheit":
-			this.value = (value - 273.15) * 9/5 + 32;
-			symbol = "°F ";
+			setValue((value - 273.15) * 9/5 + 32); 
+			setSymbol("°F ");
 			break;
 		}	
 		
-		return this.value;
+		return getValue();
 	}
-	
+
 	@Override
 	public String toString() {
-		String str;
 		
-		if(symbol == "°F") {
-			str = "Valor da conversão é de " + symbol + value;
-		}
-		else if (symbol == "°C") {
-			str = "Valor da conversão é de " + symbol + value;
-		}
-		else {
-			str = "Valor da conversão é de " + symbol + value;
-		}
-		
-		return str;
+		return String.format(" Valor da conversão é de  %.2f  ", getValue()) + getSymbol();
 	}
+
+	@Override
+	public String getType() {
+		return "Temperatura";
+	}
+
+	@Override
+	public String getMessage() {
+		return "Escolha a escala para a qual você deseja converte sua temperatura" ;
+	}
+	
+
 }
