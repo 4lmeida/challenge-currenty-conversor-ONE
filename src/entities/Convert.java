@@ -6,6 +6,7 @@ public abstract class Convert {
 	private Double value;
 	private String type;
 	private String message;
+	protected Object[] option;
 	
 	public Convert() {
 	}

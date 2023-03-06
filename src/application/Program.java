@@ -24,11 +24,17 @@ public class Program {
 			
 				String strValue = JOptionPane.showInputDialog("Insira um valor:");
 				
-				while (!strValue.matches("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$") || strValue.isBlank()|| strValue == null) {
-
-					JOptionPane.showMessageDialog(null, "Informe apenas numeros");
-					strValue = JOptionPane.showInputDialog("Insira um valor:");
-				}	
+				try  {
+					while (!strValue.matches("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$") || strValue.isBlank()|| strValue == null) {
+	
+						JOptionPane.showMessageDialog(null, "Informe apenas numeros");
+						strValue = JOptionPane.showInputDialog("Insira um valor:");
+					}	
+				}
+				catch (NullPointerException e) {
+					System.out.println(e.getMessage());
+				}
+				if(strValue == null) break;
 				
 				double inputValue = Double.parseDouble(strValue);
 				
