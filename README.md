@@ -18,7 +18,7 @@
 
 O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudados ao longo da formação de Orientação ao Objeto e alguns outros tópicos, como collections, tratamento de exceções e javax. 
 
-<p> A aplicação é um conversor de moedas estrangeiras que converte de real para outros 6 tipos de moedas e também realiza aconversão inversa. E além de converter moedas ela támbém converte a temperatura em  3 tipos de escalas diferentes como Celsius, Kelvin e Fahrenheit.</p>
+<p> A aplicação é um conversor de moedas estrangeiras que converte de real para outros 6 tipos de moedas e também realiza a conversão inversa. E além de converter moedas ela também converte a temperatura em 3 tipos de escalas diferentes como Celsius, Kelvin e Fahrenheit.</p>
 
 ## Funcionalidades
 
