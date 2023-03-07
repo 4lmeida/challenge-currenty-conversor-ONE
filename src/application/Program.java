@@ -15,12 +15,11 @@ public class Program {
 		Locale.setDefault(Locale.US);
 
 		int wantContinue = 2;
-		Object[] items = { "Conversor de Moeda", "Conversor de temperatura" };
 		Object selectedValue;	
 		Convert convert = null;
 		do {
 			selectedValue = JOptionPane.showInputDialog(null, "Escolha uma Opção", "Menu",
-					JOptionPane.INFORMATION_MESSAGE, null, items, items[0]);
+					JOptionPane.INFORMATION_MESSAGE, null, Convert.items, Convert.items[0]);
 			
 				String strValue = JOptionPane.showInputDialog("Insira um valor:");
 				
@@ -41,7 +40,7 @@ public class Program {
 				if (selectedValue == "Conversor de Moeda") {
 					convert = new Currency();
 				}
-				else if (selectedValue == "Conversor de temperatura") {
+				else{
 					convert = new Temperature();
 				}
 				

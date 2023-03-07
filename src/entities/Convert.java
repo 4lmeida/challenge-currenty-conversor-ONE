@@ -4,20 +4,18 @@ public abstract class Convert {
 	
 	private String symbol;
 	private Double value;
-	private String type;
-	private String message;
 	protected Object[] option;
 	
 	public Convert() {
 	}
 
 
-	public Convert(String symbol, Double value, String type, String message) {
+	public Convert(String symbol, Double value) {
 		this.symbol = symbol;
 		this.value = value;
-		this.type = type;
-		this.message = message;
 	}
+	
+	public static Object[] items = { "Conversor de Moeda", "Conversor de temperatura" };
 
 	public String getSymbol() {
 		return symbol;
@@ -33,15 +31,6 @@ public abstract class Convert {
 
 	public void setValue(Double value) {
 		this.value = value;
-	}
-	
-	
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public abstract String getType();

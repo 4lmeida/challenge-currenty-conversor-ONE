@@ -1,7 +1,6 @@
 <h1 align="center">:money_with_wings: Convert λ4 :hotsprings:</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=GitHub Pages&message=deploy&color=blue&style=for-the-badge&logo=GitHub Pages"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 

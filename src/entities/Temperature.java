@@ -2,11 +2,10 @@ package entities;
 
 public class Temperature extends Convert{
 	
-	private Object[] option = {"De celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahreneit a Celsius", 
-			"De Kelvin a Celsius", "De Kelvin a Fahrenheit", "De Fahrenheit a Kelvin"};
-	
 	public Temperature() {
 		super();
+		super.option = new Object[] {"De celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahreneit a Celsius", 
+				"De Kelvin a Celsius", "De Kelvin a Fahrenheit", "De Fahrenheit a Kelvin"};  
 	}
 
 	public Object[] getOption() {
