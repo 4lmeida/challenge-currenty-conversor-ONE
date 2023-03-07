@@ -38,8 +38,6 @@ O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudad
 
 :memo: Consumo de API externa,
 
-:memo: Nova opção de conversão,
-
 # Autor
 
 | [<img src="https://avatars.githubusercontent.com/u/93017964?v=4" width=115><br><sub>Luís Almeida</sub>](https://github.com/4lmeida) |
