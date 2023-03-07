@@ -4,7 +4,7 @@
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
-> Status do Projeto: :heavy_check_mark: :warning: (em desenvolvimento)
+> Status do Projeto: :warning: (em desenvolvimento)
 
 ### Tópicos 
 
@@ -22,16 +22,11 @@ O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudad
 
 ## Funcionalidades
 
-:heavy_check_mark: Encripta.
+:heavy_check_mark: Converte moedas e temperatura.
 
-:heavy_check_mark: Desencripta.  
+## Layout :mag_right:
 
-:heavy_check_mark: Design Responsivo.
-
-#Layout :mag_right:
-
-
-![]()
+![](https://github.com/4lmeida/challenge-currenty-conversor-ONE/blob/main/src/assets/challenge-convert-one.gif)
 
 ## Linguagens, dependencias e libs utilizadas :books:
 
@@ -40,7 +35,9 @@ O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudad
 ## Tarefas em aberto
 
 :memo: Refatoração,
+
 :memo: Consumo de API externa,
+
 :memo: Nova opção de conversão,
 
 # Autor
@@ -52,4 +49,4 @@ O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudad
 
 The [MIT License]()(MIT)
 
-Copyright :copyright: 2023 - Conversor λ4
+Copyright :copyright: 2023 - Convert λ4
