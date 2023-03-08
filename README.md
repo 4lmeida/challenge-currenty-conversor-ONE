@@ -45,6 +45,6 @@ O Convert λ4 é um desafio do programa ONE para testar os conhecimentos estudad
 
 ## Licença 
 
-The [MIT License]()(MIT)
+The [MIT License](https://github.com/4lmeida/challenge-currenty-conversor-ONE/blob/main/LICENSE)(MIT)
 
 Copyright :copyright: 2023 - Convert λ4
