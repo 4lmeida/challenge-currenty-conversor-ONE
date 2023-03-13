@@ -1,20 +1,17 @@
 package entities;
 
-public class Temperature extends Convert{
+public class Temperature extends Convert implements ConvertType {
+	
+	private static final Object[] OPTION = {"De celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahreneit a Celsius", 
+			"De Kelvin a Celsius", "De Kelvin a Fahrenheit", "De Fahrenheit a Kelvin"}; 
 	
 	public Temperature() {
 		super();
-		super.option = new Object[] {"De celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahreneit a Celsius", 
-				"De Kelvin a Celsius", "De Kelvin a Fahrenheit", "De Fahrenheit a Kelvin"};  
+		super.setOption(OPTION);
+		super.setType("Temperatura");
+		super.setMessage("Escolha uma escala para qual você desaja converte a temperatura");
 	}
 
-	public Object[] getOption() {
-		return option;
-	}
-
-	public void setOption(Object[] option) {
-		this.option = option;
-	}
 
 	@Override
 	public double convertTypes(Object obj, double value) {
@@ -53,16 +50,6 @@ public class Temperature extends Convert{
 	public String toString() {
 		
 		return String.format(" Valor da conversão é de  %.2f  ", getValue()) + getSymbol();
-	}
-
-	@Override
-	public String getType() {
-		return "Temperatura";
-	}
-
-	@Override
-	public String getMessage() {
-		return "Escolha a escala para a qual você deseja converte sua temperatura" ;
 	}
 	
 

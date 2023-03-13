@@ -1,29 +1,18 @@
 package entities;
 
-public class Currency extends Convert {
+public class Currency extends Convert implements ConvertType {
+	
+	private static final Object[] OPTION = { "De Reais a Dólares", "De Reais a Euros", "De Reias a Libras",
+		"De Reais a Peso Chileno", "De Reais a Peso Argentino", "De Dólares a Reais", "De Euros a Reis",
+		"De Libras a Reais", "De Peso Chileno a Reais", "De Peso Argentino a Reias" };
 	
 	public Currency() {
 		super();
-		super.option = new Object[]{ "De Reais a Dólares", "De Reais a Euros", "De Reias a Libras",
-				"De Reais a Peso Chileno", "De Reais a Peso Argentino", "De Dólares a Reais", "De Euros a Reis",
-				"De Libras a Reais", "De Peso Chileno a Reais", "De Peso Argentino a Reias" }; 
+		super.setOption(OPTION); 
+		super.setType("Moeda");
+		super.setMessage("Escolha a moeda para qual você deseja girar seu dinheiro");
 	}
-
-	public Object[] getOption() {
-		return option;
-	}
-
-	public void setOption(Object[] option) {
-		this.option = option;
-	}
-
-	public String getType() {
-		return "Moedas";
-	}
-
-	public String getMessage() {
-		return "Escolha a  moeda para a qual você deseja girar seu dinheiro";
-	}
+	
 
 	public double convertTypes(Object obj, double quantity) {
 
@@ -80,5 +69,10 @@ public class Currency extends Convert {
 		}	
 		return str + String.format("%.2f", getValue()); 
 	}
+
+
+
+
+
 }
 

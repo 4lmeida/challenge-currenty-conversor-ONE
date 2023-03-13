@@ -5,6 +5,7 @@ import java.util.Locale;
 import javax.swing.JOptionPane;
 
 import entities.Convert;
+import entities.ConvertType;
 import entities.Currency;
 import entities.Temperature;
 
@@ -13,13 +14,13 @@ public class Program {
 	public static void main(String[] args) {
 
 		Locale.setDefault(Locale.US);
-
+		
 		int wantContinue = 2;
 		Object selectedValue;	
-		Convert convert = null;
+		ConvertType convert = new Convert();
 		do {
-			selectedValue = JOptionPane.showInputDialog(null, "Escolha uma Opção", "Menu",
-					JOptionPane.INFORMATION_MESSAGE, null, Convert.items, Convert.items[0]);
+			selectedValue = JOptionPane.showInputDialog(null, convert.getMessage(), convert.getType(),
+					JOptionPane.INFORMATION_MESSAGE, null, convert.getConverters(), convert.getConverters());
 			
 				String strValue = JOptionPane.showInputDialog("Insira um valor:");
 				

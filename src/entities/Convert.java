@@ -1,12 +1,18 @@
 package entities;
 
-public abstract class Convert {
+public class Convert implements ConvertType {
 	
 	private String symbol;
 	private Double value;
-	protected Object[] option;
+	private String type;
+	private String message;
+	private Object[] option;
+	private Object[] converters;
 	
 	public Convert() {
+		this.converters = new Object[] { "Conversor de Moeda", "Conversor de temperatura" };
+		this.message = "Escolha uma Opção";
+		this.type = "Menu";
 	}
 
 
@@ -15,7 +21,12 @@ public abstract class Convert {
 		this.value = value;
 	}
 	
-	public static Object[] items = { "Conversor de Moeda", "Conversor de temperatura" };
+	
+
+	public void setOption(Object[] option) {
+		this.option = option;
+	}
+
 
 	public String getSymbol() {
 		return symbol;
@@ -32,15 +43,52 @@ public abstract class Convert {
 	public void setValue(Double value) {
 		this.value = value;
 	}
-
-	public abstract String getType();
-
-	public abstract String getMessage();
-
-	public abstract Object[] getOption();
 	
-	public abstract double convertTypes(Object obj, double value);
+
+	public Object[] getConverters() {
+		return converters;
+	}
 	
-	public abstract String toString();
+	
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public String getMessage() {
+		return message;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+	public Object[] getOption() {
+		return option;
+	}
+
+
+	public void setConverters(Object[] converters) {
+		this.converters = converters;
+	}
+
+
+	@Override
+	public double convertTypes(Object obj, double value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+	
 	
 }
